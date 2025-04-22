@@ -37,3 +37,11 @@ To view logs for a specific service, run `just logs <service-name>`, for example
 
 To stop the Pi-hole service, use `just stop`.
 
+
+### Setting Up Password
+
+Set the Pi-hole admin dashboard password using `just pihole setpassword`.
+
+## Recommended Block List
+
+See [FireBog's Block List](https://v.firebog.net/hosts/lists.php?type=tick)
