@@ -27,8 +27,6 @@ To list all available recipes run `just`
 
 ### Docker Compose
 
-> Only for local emulation of the platform for development and testing
-
 If you have `docker` installed you can run the platform locally using `just run`
 
 To view logs of a service run `just logs <service-name>` for example `just logs traefik`
