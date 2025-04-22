@@ -1,6 +1,6 @@
-## Pihole & Tailscale 🔒
+## Pi-hole & Tailscale 🔒
 
-Run PiHole as a DNS provider in your tailnet
+Run [Pi-hole](https://pi-hole.net/) in your [Tailnet](https://tailscale.com/)
 
 ## Environment Variables
 
@@ -12,9 +12,11 @@ Run PiHole as a DNS provider in your tailnet
 
 ### Required
 
-    - [`just`](https://github.com/casey/just#just) - A handy way to save and run project-specific commands
-    - [`docker`](https://docs.docker.com/engine/install/) - An open source containerization technology for building and containerizing applications
+- [`docker`](https://docs.docker.com/engine/install/) - An open source containerization technology for building and containerizing applications
 
+### Optional
+
+- [`just`](https://github.com/casey/just#just) - A handy way to save and run project-specific commands
 
 ### Local Environment
 
