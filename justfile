@@ -36,6 +36,10 @@ logs SERVICE:
 exec SERVICE *CMD:
     just docker exec -it {{SERVICE}} {{CMD}}
 
+# run command from pihole CLI
+pihole *CMD='--help':
+    just exec pihole pihole {{CMD}} 
+
 # setup local environment
 setup:
     #!/usr/bin/env bash
