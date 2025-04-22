@@ -1,0 +1,32 @@
+## Pihole & Tailscale 🔒
+
+Run PiHole as a DNS provider in your tailnet
+
+## Environment Variables
+
+| Key                | Description                                                                                |
+| ------------------ | ------------------------------------------------------------------------------------------ |
+| `TS_AUTHKEY` | Tailscale client auth key (see, [Tailscale Admin](https://login.tailscale.com/admin/settings/keys/)) |
+
+## Getting Started
+
+### Required
+
+    - [`just`](https://github.com/casey/just#just) - A handy way to save and run project-specific commands
+    - [`docker`](https://docs.docker.com/engine/install/) - An open source containerization technology for building and containerizing applications
+
+
+### Local Environment
+
+To generate your local `.env` file run the `setup` recipe with `just setup`
+
+To list all available recipes run `just`
+
+
+### Docker Compose
+
+> Only for local emulation of the platform for development and testing
+
+If you have `docker` installed you can run the platform locally using `just run`
+
+To view logs of a service run `just logs <service-name>` for example `just logs traefik`
