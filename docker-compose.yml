@@ -4,13 +4,13 @@ volumes:
 
 services:
   pihole: # https://github.com/pi-hole/docker-pi-hole/
-    image: pihole/pihole:latest
+    image: pihole/pihole:${PIHOLE_VERSION:-latest}
     restart: unless-stopped
-    network_mode: service:pihole-tailscale
+    network_mode: service:tailscale
     cap_add:
       - NET_ADMIN
     environment:
-      TZ: America/New_York
+      TZ: ${TZ:-America/New_York}
       PIHOLE_DNS_: 1.1.1.1;1.0.0.1
       VIRTUAL_HOST: pihole
       WEBTHEME: default-dark
@@ -20,15 +20,15 @@ services:
     volumes:
       - pihole-data:/etc/pihole
 
-  pihole-tailscale: # https://tailscale.com/kb/1282/docker
-    image: tailscale/tailscale:latest
+  tailscale: # https://tailscale.com/kb/1282/docker
+    image: tailscale/tailscale:${TAILSCALE_VERSION:-latest}
+    restart: unless-stopped
     hostname: pihole
     devices:
       - /dev/net/tun:/dev/net/tun
     cap_add:
       - net_admin
       - sys_module
-    restart: unless-stopped
     environment:
       TS_AUTHKEY: ${TS_AUTHKEY}
       TS_STATE_DIR: /var/lib/tailscale
