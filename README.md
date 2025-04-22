@@ -1,6 +1,6 @@
 ## Pi-hole & Tailscale 🔒
 
-Run [Pi-hole](https://pi-hole.net/) in your [Tailnet](https://tailscale.com/)
+Run [Pi-hole](https://pi-hole.net/) in your [Tailnet](https://tailscale.com/) w/ Docker Compose
 
 ## Environment Variables
 
