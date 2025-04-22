@@ -4,9 +4,13 @@ Run [Pi-hole](https://pi-hole.net/) in your [Tailnet](https://tailscale.com/)
 
 ## Environment Variables
 
-| Key                | Description                                                                                |
-| ------------------ | ------------------------------------------------------------------------------------------ |
-| `TS_AUTHKEY` | Tailscale client auth key (see, [Tailscale Admin](https://login.tailscale.com/admin/settings/keys/)) |
+| Key                 | Description                                                                                                          |
+| Default             |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `TZ`                | Timezone for your location (see, [tz database list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones))   | `America/New_York` |
+| `PIHOLE_VERSION`    | Pi-hole docker version tag (see, [`pihole/pihole` tags](https://hub.docker.com/r/pihole/pihole/tags/))               | `latest`           |
+| `TAILSCALE_VERSION` | Tailscale docker version tag (see, [`tailscale/tailscale` tags](https://hub.docker.com/r/tailscale/tailscale/tags/)) | `latest`           |
+| `TS_AUTHKEY`        | Tailscale client auth key (see, [Tailscale Admin](https://login.tailscale.com/admin/settings/keys/))                 | *required*         |
 
 ## Getting Started
 
@@ -27,6 +31,8 @@ To list all available recipes run `just`
 
 ### Docker Compose
 
-If you have `docker` installed you can run the platform locally using `just run`
+Start the Pi-hole service in your tailnet using `just run`
 
-To view logs of a service run `just logs <service-name>` for example `just logs traefik`
+To view logs of a service run `just logs <service-name>`. For example `just logs pihole` or `just logs tailscale`
+
+To stop  the Pi-hole service use `just stop`
