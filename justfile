@@ -14,7 +14,7 @@ alias e := exec
 
 # run docker compose
 docker *ARGS:
-    sudo docker compose {{ARGS}}
+    docker compose {{ARGS}}
 
 # list docker compose services
 services:
